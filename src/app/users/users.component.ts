@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.usersService.getUsers('https://create-users-api.herokuapp.com/users')
+    this.subscription = this.usersService.get('https://create-users-api.herokuapp.com/users')
       .subscribe(users => {
         this.users = users;
       });
