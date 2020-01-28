@@ -7,7 +7,6 @@ import { User } from '../core/models/user.model';
   providedIn: 'root'
 })
 
-
 export class UsersService {
 
   usersListEndpoint = 'https://create-users-api.herokuapp.com/users';
