@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { User } from '../core/models/user.model';
-import { UsersService } from '../core/services/users.service';
+import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-users',
@@ -14,13 +14,12 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   constructor(private usersService: UsersService) { }
 
-  userInformation(e): any {
+  userInformation(): void {
     alert('Unavailable yet');
-    e.preventDefault();
   }
 
   ngOnInit() {
-    this.subscription = this.usersService.get('https://create-users-api.herokuapp.com/users')
+    this.subscription = this.usersService.get()
       .subscribe(users => {
         this.users = users;
       });
